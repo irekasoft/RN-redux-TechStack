@@ -31,18 +31,7 @@ const App = TabNavigator({
       <Text>Profile</Text>
     ),
   },
-  Profile2: {
-    screen: ProfileScreen,
-    tabBarIcon: ({ tintColor, focused }) => (
-      <Text>Profile</Text>
-    ),
-  },
-  Profile3: {
-    screen: ProfileScreen,
-    tabBarIcon: ({ tintColor, focused }) => (
-      <Text>Profile</Text>
-    ),
-  },
+
   
   
 });

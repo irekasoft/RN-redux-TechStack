@@ -11,16 +11,6 @@ import { Header } from '../components/common';
 import reducers from '../reducers'
 import LibraryList from '../components/LibraryList';
 
-// const HomeScreen = () => {
-//   return (
-
-//     <View>
-//       <Text>Hello</Text>
-//     </View>
-
-//   );
-// };
-
 
 const HomeScreen = () => {
 
