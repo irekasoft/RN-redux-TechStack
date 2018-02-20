@@ -10,7 +10,6 @@ import * as actions from '../actions';
 
 class ListItem extends Component {
 
-
   renderDescription(){
 
     const { library, selectedLibraryId } = this.props;
@@ -45,11 +44,11 @@ class ListItem extends Component {
 
         <CardSection>
           <Text style={styles.title}>
-           
+           {title}{this.renderDescription()}
           </Text> 
           
         </CardSection>
-        {title}{this.renderDescription()}
+
       </TouchableOpacity>
 
     );
@@ -68,7 +67,7 @@ const styles = {
 
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
 
   return { selectedLibraryId: state.selectedLibraryId }
 
