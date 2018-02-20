@@ -19,8 +19,11 @@ const App = TabNavigator({
   Home: {
     screen: HomeScreen,
   
-    tabBarIcon: ({ tintColor, focused }) => (
-      <Text>Home</Text>
+    tabBarIcon: () => (
+      <Image 
+          style = {{  }}
+          source={ require('./img/TabBar-Routine.png')  }
+        />
     ),
     
   },
@@ -28,7 +31,10 @@ const App = TabNavigator({
   Profile: {
     screen: ProfileScreen,
     tabBarIcon: ({ tintColor, focused }) => (
-      <Text>Profile</Text>
+      <Image 
+          style = {{  }}
+          source={ require('./img/TabBar-Routine.png')  }
+        />
     ),
   },
 
