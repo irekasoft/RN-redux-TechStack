@@ -1,12 +1,20 @@
 import React, { Components } from 'react';
-import { View, Text } from 'react-native';
+import { SafeAreaView, View, Text, StatusBar } from 'react-native';
+
+// OWN STUFF
+import { Header } from '../components/common';
 
 const ProfileScreen = () => {
   return (
 
-    <View>
-      <Text>ProfileScreen</Text>
-    </View>
+
+      <SafeAreaView style={{ flex: 1 }}>
+      
+        <Header>Profile</Header>
+ 
+        
+      </SafeAreaView>
+
 
   );
 };
