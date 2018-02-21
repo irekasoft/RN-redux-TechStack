@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
 
-// redux
-import {  connect } from 'react-redux';
+// REDUX
+import { connect } from 'react-redux';
+import * as actions from '../actions'; 
 
+// MY COMPONENTS
 import { CardSection } from './common';
-import * as actions from '../actions';
-
 
 class ListItem extends Component {
 
@@ -14,12 +14,10 @@ class ListItem extends Component {
 
     const { library, selectedLibraryId } = this.props;
 
-    if (this.props.library.id === this.props.selectedLibraryId) {
-
+    if (library.id === this.props.selectedLibraryId) {
       return(
-        <Text>{this.props.library.description}</Text>
+        <Text> - {library.description}</Text>
       );
-
     }
 
   }
@@ -29,26 +27,22 @@ class ListItem extends Component {
   }
 
   render () {
-    
+
     // deconstructing
     const { id, title } = this.props.library;
 
     return(
-
       // touchable without feedback was not working
       <TouchableOpacity
         // select library from actions
         onPress={ ()=> this.props.selectLibrary(id) }
         // onPress={ ()=> this.cellOnSelected() }
       >
-
         <CardSection>
           <Text style={styles.title}>
            {title}{this.renderDescription()}
           </Text> 
-          
         </CardSection>
-
       </TouchableOpacity>
 
     );
@@ -64,7 +58,6 @@ const styles = {
     
   }
 
-
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -73,5 +66,6 @@ const mapStateToProps = (state, ownProps) => {
 
 };
 
-// 1st argument mapstateto.. or null, then actions
+// @1.. argument mapStateToProps.. or null, then actions
+// @2.. action object
 export default connect(mapStateToProps, actions)(ListItem);

@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 
 class LibraryList extends Component {
 
+  // 1. called when this component will boot up
   componentWillMount(){
 
     // boilerplate setup
@@ -26,6 +27,7 @@ class LibraryList extends Component {
   // argument is the item that is need to be rendered
   renderRow(library){
 
+    // 2. Will call this ListItem for every cell
     return <ListItem library={library}/>
     //return <View><Text>{library.id}</Text></View>
 

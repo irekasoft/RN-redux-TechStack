@@ -7,7 +7,6 @@ import { Header } from '../components/common';
 const ProfileScreen = () => {
   return (
 
-
       <SafeAreaView style={{ flex: 1 }}>
       
         <Header>Profile</Header>

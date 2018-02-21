@@ -1,3 +1,5 @@
+// can not return undefined, must return a value
+// event it's null or just an empty array
 export default(state = null, action) => {
   
   console.log(action);

@@ -11,20 +11,14 @@ import { Header } from '../components/common';
 import reducers from '../reducers'
 import LibraryList from '../components/LibraryList';
 
-
 const HomeScreen = () => {
-
   return (
     <Provider store={createStore(reducers)} >
-
       {/* // one for JSX, one for JS object */}
       <SafeAreaView style={{ flex: 1 }}>
-      
         <Header>TechStack</Header>
-        <LibraryList/>
-        
+        <LibraryList/>      
       </SafeAreaView>
-
     </Provider>    
   );
 };

@@ -1,8 +1,10 @@
 import React from 'react';
 import { SafeAreaView, View, Text, StatusBar } from 'react-native';
+
+
+
 import { Header } from './components/common';
 import { TabNavigator } from 'react-navigation';
-
 import LibraryList from './components/LibraryList';
 
 // REDUX STUFF
@@ -31,10 +33,7 @@ const App = TabNavigator({
   Profile: {
     screen: ProfileScreen,
     tabBarIcon: ({ tintColor, focused }) => (
-      <Image 
-          style = {{  }}
-          source={ require('./img/TabBar-Routine.png')  }
-        />
+      <Icon.Button name="app-store" backgroundColor="#3b5998" />
     ),
   },
 
