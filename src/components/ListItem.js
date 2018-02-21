@@ -1,27 +1,52 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
+import { 
+  Text, 
+  TouchableWithoutFeedback, 
+  TouchableOpacity, 
+  LayoutAnimation 
+} from 'react-native';
 
 // REDUX
 import { connect } from 'react-redux';
 import * as actions from '../actions'; 
 
 // MY COMPONENTS
-import { CardSection } from './common';
+import { CardSection, Card } from './common';
 
 class ListItem extends Component {
+
+  componentDidUpdate(){
+    LayoutAnimation.spring();
+  }
+
   renderDescription(){
     // Some sort of declaration of props here.
     const { library, selectedLibraryId, expanded } = this.props;
-
     if (expanded == true) {
       return(
-        <Text> - {library.description}</Text>
+        <CardSection>
+          <Text style={styles.title}> 
+            {library.description}
+          </Text>
+        </CardSection>
+
       );
+    }else {
+      return ;
     }
   }
 
-  cellOnSelected(){
-    console.log("cell on selected");
+  cellOnSelected(id){
+    var myId = 0;
+    console.log("cell on selected: " + this.props.selectedLibraryId + ' id: ' + id);
+    if (this.props.selectedLibraryId == id){
+
+      myId = -1;
+    }else{
+      myId = id;
+    }
+
+    this.props.selectLibrary(myId);
   }
 
   // ??: Is after call selectLibrary(id), the render called automatically?
@@ -30,18 +55,23 @@ class ListItem extends Component {
     // deconstructing
     const { id, title } = this.props.library;
 
+    var myId;
+
     return(
       // touchable without feedback was not working
       <TouchableOpacity
         // select library from actions
-        onPress={ ()=> this.props.selectLibrary(id) }
+        onPress={ ()=> this.cellOnSelected(id) }
         // onPress={ ()=> this.cellOnSelected() }
       >
+        <Card>
         <CardSection>
           <Text style={styles.title}>
-           {title}{this.renderDescription()}
+            {title}
           </Text> 
         </CardSection>
+          {this.renderDescription()}
+        </Card>
       </TouchableOpacity>
 
     );
@@ -53,8 +83,7 @@ const styles = {
 
   title: {
     fontSize: 18,
-    paddingLeft: 15,
-    
+    paddingLeft: 15,    
   }
 
 }
@@ -69,7 +98,10 @@ const mapStateToProps = (state, ownProps) => {
     expanded = true;
   }
 
-  return { expanded }
+  return { 
+    expanded , 
+    selectedLibraryId : state.selectedLibraryId, 
+  }
 
 };
 

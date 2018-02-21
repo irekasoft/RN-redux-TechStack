@@ -41,12 +41,11 @@ const App = TabNavigator({
   tabBarPosition: 'bottom',
   tabBarOptions: {
     activeTintColor: 'grey',
-    activeBackgroundColor: 'black',
-    inactiveBackgroundColor: 'black',
+    activeBackgroundColor: 'white',
+    inactiveBackgroundColor: 'white',
   }
 }
 
 );
-
 
 export default App;
