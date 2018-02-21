@@ -26,11 +26,9 @@ class LibraryList extends Component {
   // render single element of the row
   // argument is the item that is need to be rendered
   renderRow(library){
-
     // 2. Will call this ListItem for every cell
     return <ListItem library={library}/>
     //return <View><Text>{library.id}</Text></View>
-
   }
 
   render(){
@@ -55,14 +53,12 @@ class LibraryList extends Component {
 // provide as props 
 // well... how this work? 
 // put console log
-
 const mapStateToProps = state => {
 
   console.log('mapStateToProps ' + state);
   return { libraries: state.libraries };
 
 };
-
 
 // glue react and redux
 // help to get the redux store

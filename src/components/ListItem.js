@@ -9,23 +9,22 @@ import * as actions from '../actions';
 import { CardSection } from './common';
 
 class ListItem extends Component {
-
   renderDescription(){
+    // Some sort of declaration of props here.
+    const { library, selectedLibraryId, expanded } = this.props;
 
-    const { library, selectedLibraryId } = this.props;
-
-    if (library.id === this.props.selectedLibraryId) {
+    if (expanded == true) {
       return(
         <Text> - {library.description}</Text>
       );
     }
-
   }
 
   cellOnSelected(){
     console.log("cell on selected");
   }
 
+  // ??: Is after call selectLibrary(id), the render called automatically?
   render () {
 
     // deconstructing
@@ -60,9 +59,17 @@ const styles = {
 
 }
 
+// no logic in my component
+// use ownProps 
 const mapStateToProps = (state, ownProps) => {
+  
+  var expanded = false;
+  
+  if (state.selectedLibraryId === ownProps.library.id){
+    expanded = true;
+  }
 
-  return { selectedLibraryId: state.selectedLibraryId }
+  return { expanded }
 
 };
 
