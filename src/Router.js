@@ -7,31 +7,47 @@ import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
 //Create a dedicated class that will manage the tabBar icon
-const TabIcon = () => {
+class TabIcon extends Component {
 
-  return (
-    <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center', justifyContent: 'center'}}>
-      <Image 
-        source={require('./img/TabBar-Routine.png')}
-        style={{ tintColor:'#8E8E93'}}
-      />
-    </View>
-  );
+  render(){
 
-}
+    var color = this.props.focused
+            ? this.props.activeTintColor 
+            : this.props.inactiveTintColor;
 
-const TabIcon2 = () => {
-
-  return (
+    return (
       <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center', justifyContent: 'center'}}>
         <Image 
-          source={require('./img/tabbar-star.png')}
-          style={{ tintColor:'#8E8E93'}}
+          source={require('./img/TabBar-Routine.png')}
+          style={{ tintColor:color}}
         />
       </View>
-  );
-  
+    );
+
+  }
+
 }
+
+class TabIcon2 extends Component {
+
+  render(){
+
+    var color = this.props.focused
+              ? this.props.activeTintColor 
+              : this.props.inactiveTintColor;
+
+    return (
+        <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center', justifyContent: 'center'}}>
+          <Image 
+            source={require('./img/tabbar-star.png')}
+            style={{ tintColor:color}}
+          />
+        </View>
+    );
+  }
+
+}
+
 
 const RouterComponent = () => {
 
@@ -42,7 +58,7 @@ const RouterComponent = () => {
         tabBarPosition='bottom'
         activeTintColor='#007AFF'
         inctiveTintColor='#000'
-        showIcon = 'true'
+        showIcon = {true}
         swipeEnabled = {false}
         animationEnabled = {false}
       >

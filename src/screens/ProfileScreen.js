@@ -2,7 +2,7 @@ import React, { Components } from 'react';
 import { SafeAreaView, View, Text, StatusBar, Image } from 'react-native';
 
 // OWN STUFF
-import { Header, Card, CardSection } from '../components/common';
+import { Header, Card, CardSection, Input } from '../components/common';
 
 const ProfileScreen = () => {
   return (
@@ -21,9 +21,7 @@ const ProfileScreen = () => {
             <Text>Hello</Text>
           </CardSection>
           <CardSection>
-            <Text>
-              Please Help
-            </Text>
+            <Input label="Name"/>
           </CardSection>
         </Card>
 
