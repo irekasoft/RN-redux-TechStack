@@ -1,7 +1,12 @@
 # RN TechStack
 
-<center><img src="./screenshots/01.png" width="320"/></center>
+<center><img src="./screenshots/02.png" width="320"/></center>
 
 ## Tech Stack 
 
-How this app was build. React Native. Redux and all it's components.
+How this app was build with React Native. 
+
+Using this key libraries:
+
+* react-native-router-flux
+* Redux, [actions, store, reducers]
