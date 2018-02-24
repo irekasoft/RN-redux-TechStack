@@ -16,10 +16,10 @@ const HomeScreen = () => {
     <Provider store={createStore(reducers)} >
       {/* // one for JSX, one for JS object */}
       <SafeAreaView style={{ flex: 1 }}>
-        <Header>TechStack</Header>
         <LibraryList/>      
       </SafeAreaView>
     </Provider>    
+    
   );
 };
 

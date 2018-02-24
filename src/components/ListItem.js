@@ -90,6 +90,7 @@ const styles = {
 
 // no logic in my component
 // use ownProps 
+// when state changes, it will rerender
 const mapStateToProps = (state, ownProps) => {
   
   var expanded = false;

@@ -8,13 +8,15 @@ const ProfileScreen = () => {
   return (
 
       <SafeAreaView style={{ flex: 1 }}>
-      
-        <Header>Profile</Header>
+
         <Image 
-          style = {{ alignSelf:'auto', }}
-          source={ require('../img/TabBar-Routine.png')  }
+          style= {{ width:'100%', height: 100, marginTop: 30, tintColor:'#030303' }}
+          source={require('../img/TabBar-Routine.png')}
+          
+          resizeMode = 'contain'
         />
-        
+
+
       </SafeAreaView>
 
 
